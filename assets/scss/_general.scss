@@ -1,0 +1,333 @@
+.header {
+  &__logo-container {
+    @apply w-full pt-2 pb-2 bg-white/20 border-b border-white;
+  }
+
+  &__logo {
+    @apply m-auto max-h-[30px];
+  }
+}
+
+// footer
+
+.footer {
+  width: 100%;
+  &__container {
+    @apply bg-white/20 border-t border-white pt-2;
+  }
+
+  &__content {
+    @apply container w-[325px] max-w-[95%] mb-2;
+  }
+
+  &__links {
+    @apply flex flex-row justify-between;
+  }
+
+  &__link {
+    @apply underline text-somiLightBlue font-poppinsRegular;
+  }
+
+  &__tabs {
+    @apply mt-2;
+  }
+}
+
+//card page
+
+.card-page {
+  @apply pt-2 pb-2 flex flex-col flex-1 justify-center items-center;
+
+  &__buttons {
+    @apply container w-[300px] max-w-[95%] flex flex-wrap gap-x-3 gap-y-3 mt-3;
+  }
+}
+
+.button {
+  @apply flex flex-col flex-1 items-center justify-center p-4 rounded-md text-white;
+
+  &--primary {
+    @apply bg-somiDeepBlue hover:bg-somiLightBlue;
+  }
+
+  &__label {
+    @apply mt-1;
+  }
+}
+
+// card back
+
+.card-back {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  height: 100%;
+  justify-content: space-around;
+  text-align: left;
+  width: 100%;
+
+  &__info,
+  &__company-info,
+  &__contact-info {
+    margin-bottom: 10px;
+  }
+
+  &__divider {
+    height: 1px;
+    width: 100%;
+    border-color: darkgray;
+  }
+
+  &__name {
+    @apply text-[16px] font-poppinsSemiBold;
+  }
+  &__group {
+    @apply text-[14px] font-poppinsItalic;
+  }
+
+  &__title,
+  &__position,
+  &__address,
+  &__contact-link {
+    @apply text-[14px] font-poppinsRegular;
+  }
+
+  &__company-name {
+    @apply text-[16px] font-poppinsSemiBold text-somiLightBlue;
+  }
+
+  &__contact-item {
+    @apply flex flex-row gap-2;
+  }
+
+  &__icon {
+    @apply w-[20px] h-[20px];
+  }
+
+  &__contact-link {
+    @apply underline text-somiDeepBlue;
+  }
+}
+
+//   card front
+
+.card-front {
+  @apply text-center w-[300px] max-w-full h-full flex flex-col;
+
+  &__details {
+    @apply flex flex-col items-center justify-center flex-1 pt-[15px] pb-[15px];
+  }
+
+  &__title,
+  &__position {
+    @apply text-[14px] font-poppinsRegular;
+  }
+
+  &__name {
+    @apply text-[18px] font-poppinsSemiBold;
+  }
+
+  &__image {
+    @apply w-[95%] m-auto;
+  }
+}
+
+//tabs style
+
+.tabs {
+  @apply relative;
+  &__navigation {
+    @apply flex justify-center w-[325px] max-w-[95%] container items-end h-[55px];
+  }
+
+  &__button {
+    outline: none;
+    @apply py-2 px-4 text-lg font-semibold focus:outline-none flex-1 h-[30px] transition-all duration-300 ease-in-out;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__button--active {
+    @apply h-[50px];
+  }
+
+  &__color {
+    @apply h-5;
+  }
+
+  &__border {
+    @apply absolute bottom-0 border-b-4 w-full;
+  }
+
+  &__content {
+    @apply p-6 absolute left-0 right-0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &__inner {
+    @apply container w-[325px] max-w-[95%];
+  }
+
+  &__logo {
+    @apply w-[85px] bg-white p-[10px] rounded-lg;
+  }
+
+  &__logo-image {
+    @apply bg-cover bg-center;
+  }
+
+  &__title {
+    & > span {
+      @apply font-poppinsRegular;
+    }
+    @apply font-poppinsSemiBold text-[20px] mb-3 mt-2;
+    color: white;
+  }
+
+  &__description {
+    @apply mb-4 text-[rgba(255,255,255,0.5)] font-poppinsRegular;
+  }
+
+  &__button-primary {
+    @apply text-white  py-2 px-4 rounded w-full font-poppinsSemiBold text-[18px];
+  }
+}
+
+// layout
+
+.page {
+  @apply flex flex-col min-h-screen;
+  &__header,
+  &__footer {
+  }
+}
+
+.card-container,
+.form {
+  perspective: 1000px;
+  width: 100%;
+  @apply flex justify-center flex-col items-center;
+}
+
+.card-container__card {
+  width: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  @apply h-full max-w-[95%] min-h-[370px];
+}
+
+.card-container__card--flipped {
+  transform: rotateY(180deg);
+}
+
+.card-container__face {
+  @apply w-full h-full absolute flex justify-center items-center text-[20px] overflow-hidden rounded-[8px] border border-white shadow-[0_4px_6px_rgba(0,0,0,0.1)];
+  backface-visibility: hidden;
+}
+
+.card-container__face--front {
+  @apply bg-[#d9dbe6];
+}
+
+.card-container__face--back {
+  @apply bg-[#f2f2f6];
+  transform: rotateY(180deg);
+}
+
+// form
+.form {
+    max-width: 100%;
+    width: 325px;
+  
+    &__container {
+      @apply xs:max-w-[95%] md:max-w-full;
+    }
+  
+    &__card {
+      @apply w-[325px] max-w-full bg-gray-200 p-5 border border-white rounded-lg shadow-sm mb-5 relative;
+    }
+  
+    &__title {
+      @apply font-poppinsSemiBold text-lg; 
+    }
+  
+    &__group {
+      @apply mb-2;
+    }
+  
+    &__label {
+      @apply block text-sm font-poppinsRegular mb-1;
+    }
+  
+    &__input {
+      @apply w-full border-b-4 border-gray-400 p-1 h-9 mt-1;
+    }
+  
+    &__checkbox-label {
+      @apply block text-sm font-poppinsRegular;
+    }
+  
+    &__close {
+      @apply w-7 h-7 absolute top-[-15px] right-[-15px];
+    }
+  
+    &__submit {
+      @apply w-full flex flex-col justify-center items-center gap-2 p-4 text-white font-poppinsSemiBold bg-somiDeepBlue rounded-lg transition-colors duration-300 ease-in-out;
+  
+      &:hover {
+        @apply bg-somiLightBlue;
+      }
+    }
+  }
+  
+  @media (max-height: 800px) {
+    .form__title {
+      font-size: 1.125rem; 
+    }
+  
+    .form__checkbox-label {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  
+  @media (max-height: 600px) {
+    .card-page {
+      height: 550px;
+      flex: unset; 
+      overflow-x: hidden;
+    }
+  
+    .form__container {
+      max-width: 88%;
+    }
+  }
+
+//scale
+.scale-transition {
+    transition: transform 0.3s ease;
+  }
+  
+  .scale-enter-active, 
+  .scale-leave-active {
+    @extend .scale-transition;
+  }
+  
+  .scale-enter-from, 
+  .scale-leave-to {
+    transform: scale(0);
+  }
+  
+  .scale-enter-to, 
+  .scale-leave-from {
+    transform: scale(1);
+  }
+  
+
+  .card-page__buttons {
+    margin-top: 1.25rem;
+  }
