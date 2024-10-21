@@ -14,7 +14,7 @@
           email="soroosh.sadeghi@somi.de"
         ></Card>
         <div class="card-page__buttons">
-          <button @click="toggleView" class="button button--primary">
+          <button @click="toggleView" class="button button--primary" name="Austausch-vereinbaren">
             <svg
               width="38"
               height="31"
@@ -30,7 +30,7 @@
             <span class="button__label">Austausch vereinbaren</span>
           </button>
 
-          <button @click="saveContact" class="button button--primary">
+          <button @click="saveContact" class="button button--primary" name="save-contact">
             <svg
               width="33"
               height="32"
@@ -59,8 +59,20 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { useHead } from 'nuxt/app'
 import Card from "../components/card/Card.vue";
 import ContactForm from "../components/forms/ContactForm.vue";
+
+
+useHead({
+  title: 'Somi Group | Innovative IT Recruiting, Consulting, and Services',
+  meta: [
+    {
+      name: 'description',
+      content: 'Somi Group offers specialized IT recruiting, consulting, and services. Since 2010, we provide tailored solutions through SOMI Experts, SOMI Services, SOMI Software, and SOMI Academy to help businesses succeed.'
+    }
+  ]
+})
 
 const showCard = ref(true);
 

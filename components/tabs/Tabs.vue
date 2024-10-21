@@ -7,6 +7,9 @@
         :style="tabButtonStyle(tab)"
         :class="['tabs__button', { 'tabs__button--active': index === activeTab }]"
         @click="selectTab(index)"
+        :name="tab.color"
+        :aria-label="`Select ${tab.color} tab`"
+
       >
         <div class="tabs__color" :style="tabColorStyle(tab.color)"></div>
       </button>
@@ -24,6 +27,7 @@
           {{ activeTabData.content }}
         </p>
         <button
+          name="tab-btn-content"
           :style="tabColorStyle(activeTabData.color)"
           class="tabs__button-primary"
         >

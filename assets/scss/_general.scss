@@ -1,3 +1,8 @@
+p{
+    @apply text-[14px];
+}
+
+
 .header {
   &__logo-container {
     @apply w-full pt-2 pb-2 bg-white/20 border-b border-white;
@@ -216,7 +221,7 @@
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
-  @apply h-full max-w-[95%] min-h-[370px];
+  @apply h-full max-w-[95%] min-h-[385px];
 }
 
 .card-container__card--flipped {
@@ -284,6 +289,9 @@
   }
   
   @media (max-height: 800px) {
+    .card-container__card{
+        @apply min-h-[370px];
+    }
     .form__title {
       font-size: 1.125rem; 
     }

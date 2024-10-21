@@ -64,6 +64,7 @@
         type="submit"
         @click="console.log('assessment')"
         class="form__submit"
+        name="submit-form"
       >
         <img src="/images/icon_daten_senden.svg" alt="" />
         <div>Daten senden</div>
